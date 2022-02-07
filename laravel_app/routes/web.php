@@ -40,3 +40,11 @@ Route::get('/user/update_stats/{health}/{maxHealth}/{mana}/{maxMana}/{id_player}
 Route::get('/user/update_caract/{physic}/{mental}/{social}/{id_player}', [UserController::class, 'updateCaract']);
 
 Route::get('/users/updatePosition/{listPosition}', [UserController::class, 'updatePosition']);
+
+Route::get('/user/deleteItem/{id_player}/{id_item}', [UserController::class, 'deleteItem']);
+
+Route::get('/user/subItem/{id_player}/{id_item}/{nbr}', [UserController::class, 'subItem']);
+
+Route::get('/users/getListItems/{id}', [UserController::class, 'getListItems']);
+
+Route::get('/user/addItemFromList/{id_player}/{id_item}', [UserController::class, 'addItemFromList']);

@@ -8,6 +8,46 @@ use Illuminate\Support\Facades\DB;
 class UserController extends Controller
 {
 
+    public function addItemFromList($id_player, $id_item) {
+
+
+            $item = DB::table('inventaire')
+            ->where('id', $id_item)
+            ->update(['id_player' => $id_player]);
+
+
+        return json_decode($item);
+    }
+
+    public function getListItems($id) {
+        $inventory = DB::table('inventaire')
+        ->where( 'id_player', $id )
+        ->get();
+        // var_dump($inventory);
+        $inventoryArray = [];
+        foreach($inventory as $item) {
+            array_push($inventoryArray, (array)$item);
+        }
+        return json_encode($inventoryArray);
+    }
+
+    public function deleteItem($id_player, $id_item) {
+        $user = DB::table('inventaire')
+            ->where('id', $id_item)
+            ->delete();
+
+        return json_decode($user);
+    }
+
+    public function subItem($id_user, $id_item, $nbr) {
+        $nbr = $nbr - 1;
+        $user = DB::table('inventaire')
+            ->where('id', $id_item)
+            ->update(['nbr' => $nbr]);
+
+        return json_decode($user);
+    }
+
     public function getUser() {
         $users = DB::table('personnages')
         ->orderBy( 'active', 'desc' )
