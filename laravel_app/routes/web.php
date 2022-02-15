@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PersonnageController;
 use App\Http\Controllers\UserController;
 /*
 |--------------------------------------------------------------------------
@@ -13,38 +14,42 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::group(['middleware' => ['web']], function () {
+    // your routes here
+    Route::get('/user_login/{email}/{password}', [UserController::class, 'loginUser']);
 });
-Route::get('/test', function () {
-    return json_encode("test");
-});
-Route::get('/users', [UserController::class, 'getUser']);
 
-Route::get('/user/addToGroup/{id}/{active}', [UserController::class, 'addToGroup']);
+// Route::get('/users', [PersonnageController::class, 'getUser']);
 
-Route::get('/users/active', [UserController::class, 'getActiveUsers']);
+// Route::get('/user/addToGroup/{id}/{active}', [PersonnageController::class, 'addToGroup']);
 
-Route::get('/character_create/{name}/{special}/{race}', [UserController::class, 'createCharacter']);
+// Route::get('/users/active', [PersonnageController::class, 'getActiveUsers']);
 
-Route::get('/user/getSpells/{id}', [UserController::class, 'getSpells']);
+// Route::get('/character_create/{name}/{special}/{race}', [PersonnageController::class, 'createCharacter']);
 
-Route::get('/user/getInventory/{id}', [UserController::class, 'getInventory']);
+// Route::get('/user/getSpells/{id}', [PersonnageController::class, 'getSpells']);
 
-Route::get('/user/item_create/{item_name}/{item_effect}/{type_object}/{id_player}/{nbr}', [UserController::class, 'createItem']);
+// Route::get('/user/getInventory/{id}', [PersonnageController::class, 'getInventory']);
 
-Route::get('/user/spell_create/{spell_name}/{spell_effect}/{ecole}/{id_player}', [UserController::class, 'createSpell']);
+// Route::get('/user/item_create/{item_name}/{item_effect}/{type_object}/{id_player}/{nbr}', [PersonnageController::class, 'createItem']);
 
-Route::get('/user/update_stats/{health}/{maxHealth}/{mana}/{maxMana}/{id_player}', [UserController::class, 'updateStats']);
+// Route::get('/user/spell_create/{spell_name}/{spell_effect}/{ecole}/{id_player}', [PersonnageController::class, 'createSpell']);
 
-Route::get('/user/update_caract/{physic}/{mental}/{social}/{id_player}', [UserController::class, 'updateCaract']);
+// Route::get('/user/update_stats/{health}/{maxHealth}/{mana}/{maxMana}/{id_player}', [PersonnageController::class, 'updateStats']);
 
-Route::get('/users/updatePosition/{listPosition}', [UserController::class, 'updatePosition']);
+// Route::get('/user/update_caract/{physic}/{mental}/{social}/{id_player}', [PersonnageController::class, 'updateCaract']);
 
-Route::get('/user/deleteItem/{id_player}/{id_item}', [UserController::class, 'deleteItem']);
+// Route::get('/users/updatePosition/{listPosition}', [PersonnageController::class, 'updatePosition']);
 
-Route::get('/user/subItem/{id_player}/{id_item}/{nbr}', [UserController::class, 'subItem']);
+// Route::get('/user/deleteItem/{id_player}/{id_item}', [PersonnageController::class, 'deleteItem']);
 
-Route::get('/users/getListItems/{id}', [UserController::class, 'getListItems']);
+// Route::get('/user/subItem/{id_player}/{id_item}/{nbr}', [PersonnageController::class, 'subItem']);
 
-Route::get('/user/addItemFromList/{id_player}/{id_item}', [UserController::class, 'addItemFromList']);
+// Route::get('/users/getListItems/{id}', [PersonnageController::class, 'getListItems']);
+
+// Route::get('/user/addItemFromList/{id_player}/{id_item}', [PersonnageController::class, 'addItemFromList']);
+
+// Route::post('/user_register/{username}/{email}/{password}', [UserController::class, 'registerUser']);
+
+// Passer les routes en Post dans api.php ! C'est plus propre & sécure ?
