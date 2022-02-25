@@ -188,7 +188,7 @@ class PersonnageController extends Controller
         return json_encode($usersArray);
     }
 
-    public function createCharacter($name, $special, $race, $role, $id_party) {
+    public function createCharacter($name, $special, $race, $role, $id_admin, $id_party) {
         $statsRace = $this->getRace($race);
 
         $existingUser = DB::table('personnages')
@@ -216,10 +216,21 @@ class PersonnageController extends Controller
             $sqlCaract = DB::table('caracteristiques')->insertGetId(
                 ['id_player' => $sqlPerso, 'Physique' => 20, 'Mental' => 20,'Social' => 20]
             );
+            if($role == "player") {
+                $getNbrPlayer = DB::table('parties')
+                                ->where('id', $id_party)
+                                ->where('id_admin', $id_admin)
+                                ->get('nbr_player');
+
+                $upNbrPlayer = DB::table('parties')
+                                   ->where('id', $id_party)
+                                   ->where('id_admin', $id_admin)
+                                   ->update(['nbr_player' => ($getNbrPlayer[0]->nbr_player + 1)]);
+            }
 
         }
 
-        return json_encode("Insert Done !");
+        return json_encode($getNbrPlayer);
     }
 
 

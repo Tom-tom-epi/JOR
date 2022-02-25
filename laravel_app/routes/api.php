@@ -20,7 +20,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/user_register/{username}/{email}/{password}/{id_party}', [UserController::class, 'registerUser']);
+Route::post('/user_register/{username}/{email}/{password}', [UserController::class, 'registerUser']);
 
 Route::get('/users/{id_party}', [PersonnageController::class, 'getUser']);
 
@@ -28,7 +28,7 @@ Route::post('/user/addToGroup/{id}/{active}/{id_party}', [PersonnageController::
 
 Route::get('/users/active/{id_party}', [PersonnageController::class, 'getActiveUsers']);
 
-Route::post('/character_create/{name}/{special}/{race}/{role}/{id_party}', [PersonnageController::class, 'createCharacter']);
+Route::post('/character_create/{name}/{special}/{race}/{role}/{id_admin}/{id_party}', [PersonnageController::class, 'createCharacter']);
 
 Route::get('/user/getSpells/{id}/{id_party}', [PersonnageController::class, 'getSpells']);
 
