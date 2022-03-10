@@ -226,11 +226,13 @@ class PersonnageController extends Controller
                                    ->where('id', $id_party)
                                    ->where('id_admin', $id_admin)
                                    ->update(['nbr_player' => ($getNbrPlayer[0]->nbr_player + 1)]);
+            }else {
+                $getNbrPlayer = 0;
             }
 
         }
 
-        return json_encode($getNbrPlayer);
+        return json_encode($existingUser);
     }
 
 

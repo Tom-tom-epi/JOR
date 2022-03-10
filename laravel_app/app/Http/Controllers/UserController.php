@@ -22,8 +22,14 @@ class UserController extends Controller
         ->get();
 
         if(!isset($userExist[0]->id)) {
-            $user = DB::table('users')
+            $insertUser = DB::table('users')
             ->insertGetId(['username' => $username, 'email' => $email, 'password' => $password_hashed]);
+            $user = DB::table('users')
+            ->where('email', $email)
+            ->get();
+        }else {
+            $user = "User Allready exist";
+            return $user;
         }
 
         return json_decode($user);
