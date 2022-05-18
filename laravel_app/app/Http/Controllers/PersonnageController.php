@@ -484,7 +484,7 @@ class PersonnageController extends Controller
             case "Bréton":
                     return $Bréton;
                 break;
-            case "Orque":
+            case "Orc":
                     return $Orque;
                 break;
             case "Nordique":

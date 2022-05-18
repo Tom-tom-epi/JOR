@@ -65,10 +65,50 @@ class UserController extends Controller
         return json_encode($party);
     }
 
-    public function deleteParty($id_party) {
-        $party = DB::table('parties')
+    public function deleteParty($id_party, $id_admin) {
+
+        // Check the id_admin with the id_party before the delete for security
+
+        if(isset($id_admin)) {
+            $checkAdmin = DB::table('parties')
+                            ->where('id_admin', $id_admin)
+                            ->get('id');
+
+            if($checkAdmin[1]->id == $id_party) {
+                $getIdPlayerForDelete = DB::table('personnages')
+                        ->where("id_party", $id_party)
+                        ->get('id');
+            }
+        }
+
+        if(isset($id_party) && isset($getIdPlayerForDelete)) {
+            $delChar = DB::table('personnages')
+                        ->where("id_party", $id_party)
+                        ->delete();
+            $delObject = DB::table('inventaire')
+                        ->where("id_party", $id_party)
+                        ->delete();
+
+            foreach ($getIdPlayerForDelete as $key => $id_player) {
+                $delSpells = DB::table('spells')
+                ->where("id_player", $id_player->id)
+                ->delete();
+
+                $delStats = DB::table('stats')
+                ->where("id_player", $id_player->id)
+                ->delete();
+
+                $delCaract = DB::table('caracteristiques')
+                ->where("id_player", $id_player->id)
+                ->delete();
+            }
+
+            $party = DB::table('parties')
             ->where("id", $id_party)
             ->delete();
-        return json_encode($party);
+
+        }
+
+        return json_encode($id_admin);
     }
 }
