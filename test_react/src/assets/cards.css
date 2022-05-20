@@ -1,0 +1,86 @@
+/* Card */
+
+.cardCharacters {
+    display: none;
+    flex-direction: row;
+    width: 480px;
+    background-color: rgba(128, 128, 128, 1);
+    flex-wrap: wrap;
+    overflow-x: scroll;
+    max-height: 100vh;
+    z-index: 2;
+    position: fixed;
+    top: 0;
+}
+
+.cardCharacters.displayed {
+  display: flex;
+}
+  
+.card {
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 200px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 5px;
+    background-color: rgb(36, 36, 36);
+    color: white;
+    box-shadow: 2px 2px 5px black;
+}
+.card.active {
+    /* background-color: rgba(0, 128, 0, 0.3); */
+    border-color: rgb(0, 255, 0);
+    box-shadow: 2px 2px 5px rgb(0, 255, 0);
+}
+.card.unactive {
+    /* background-color: rgba(255, 0, 0, 0.3); */
+    border-color: red;
+    box-shadow: 2px 2px 5px black;
+}
+  
+.card-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.card-race {
+    font-size: 15px;
+    font-style: italic;
+}
+.card-spe {
+    font-size: 15px;
+    font-weight: bold;
+}
+.card-passif {
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
+}
+.card-malus {
+    font-size: 16px;
+    font-weight: bold;
+    color: red;
+}
+.add-card {
+    background-color: orange;
+    font-weight: bold;
+    font-size: 20px;
+    border: 1px solid black;
+    width: 25px;
+    height: 25px;
+    margin-left: 170px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.add-card:hover {
+    box-shadow: 3px 3px 3px 3px inset rgba(0, 0, 0, 0.52);
+}
+  
+.empty_chars {
+    color: goldenrod;
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}

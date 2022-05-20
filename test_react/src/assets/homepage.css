@@ -1,0 +1,86 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+.Homepage {
+    background-color: rgb(0, 0, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+h1 {
+    font-size: 150px;
+    top: 50px;
+    position: fixed;
+    color: goldenrod;
+    text-decoration: underline;
+}
+
+.content_forms {
+    display: flex;
+    
+}
+
+.form_login,
+.form_register {
+    background-color: black;
+    width: 500px;
+    margin-top: 100px;
+    border: 1px solid white;
+    color: white;
+    justify-content: center;
+    align-items: space-around;
+    display: flex;
+    position: relative;
+    padding: 20px;
+    padding-bottom: 70px; 
+}
+
+.formulaire_home div {
+    margin-bottom: 20px;
+}
+
+.formulaire_home div label {
+    margin-bottom: 10px;
+    font-size: 18px; 
+}
+.formulaire_home div input {
+    height: 30px;
+    font-size: 18px;
+}
+
+.switch_form {
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.switch_form:hover {
+    opacity: 0.5;
+}
+
+.form_login button,
+.form_register button {
+    background-color: rgb(0, 128, 0)!important;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.form_login button:hover,
+.form_register button:hover {
+    background-color: rgb(0, 97, 0)!important;
+}
+
+.alert_register_success {
+    background-color: green;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 285px;
+}

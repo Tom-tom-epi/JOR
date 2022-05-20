@@ -1,0 +1,76 @@
+.App {
+  text-align: center;
+  position: relative;
+  /* background-color: rgba(0, 0, 0, 0.226); */
+  height: 100vh;
+  background-image: url("../assets/img/background/606641.jpg");
+}
+
+.content_center {
+  position: absolute;
+  height: 60vh;
+  width: 60vh;
+  background-color: rgba(128, 128, 128, 0.4);
+  top: calc(50vh - 15vh);
+  left: calc(50vw - 30vh);
+  z-index: 0;
+}
+
+.popup_disconect {
+  display: none;
+  position: absolute;
+  height: 20vh;
+  width: 30vw;
+  background-color: rgba(59, 59, 59, 0.8);
+  top: calc(50vh - 20vh);
+  left: calc(50vw - 15vw);
+  color: white;
+  z-index: 10;
+}
+
+.popup_disconect.displayed {
+  padding-top: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.popup_disconect .content_btn_disco {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: auto;
+}
+
+.popup_disconect .content_btn_disco button {
+  width: 150px;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.popup_disconect .content_btn_disco button.no_disco {
+  width: 150px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid red;
+  background-color: rgb(205, 0, 0);
+  color: white;
+}
+
+.popup_disconect .content_btn_disco button.yes_disco {
+  width: 150px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid green;
+  background-color: rgb(0, 90, 0);
+  color: white;
+}
+
+.popup_disconect .content_btn_disco button.yes_disco:hover {
+  background-color: rgb(1, 141, 1);
+}
+
+.popup_disconect .content_btn_disco button.no_disco:hover {
+  background-color: rgb(242, 0, 0);
+}

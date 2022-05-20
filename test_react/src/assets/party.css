@@ -1,0 +1,195 @@
+.form_party {
+    display: none;
+    border: 1px solid black;
+    position: fixed;
+    top: 45vh;
+    left: calc(50vw - 224px);
+    width: 450px;
+    height: 350px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid red;
+    background-color: black;
+}
+
+
+.form_party .btn_close_party_form{
+    background-color: red;
+    color: white;
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+}
+
+.form_party .btn_close_party_form:hover{
+    opacity: 0.5;
+}
+
+.form_party h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.form_party div label{
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.form_party div{
+    margin-bottom: 20px;
+}
+
+
+.form_party.displayed {
+    display: flex;
+}
+
+.box_delete {
+    display: none;
+}
+
+.box_delete.displayed {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: black;
+    color: goldenrod;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    font-size: 30px;
+    text-align: center;
+}
+
+.box_delete p {
+    margin-bottom: 20px;
+}
+
+.box_delete .box_btn_delete_party {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 50%;
+    margin: auto;
+}
+
+.box_delete .box_btn_delete_party .cancel_delete {
+    color: white;
+    background-color: green;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid green;
+    cursor: pointer;
+    font-size: 20px;
+}
+.box_delete .box_btn_delete_party .confirm_delete {
+    color: white;
+    background-color: red;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid red;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.box_delete .box_btn_delete_party button:hover {
+    opacity: 0.5;
+}
+
+.content_parties {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: space-between;
+    justify-content: space-evenly;
+    background-color: black;
+    color: goldenrod;
+}
+
+.block_parties {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    align-items: center;
+}
+
+.box_parties {
+    display: flex;
+    border: 1px solid goldenrod;
+    border-radius: 20px;
+    height: 250px;
+    width: 250px;
+    padding: 20px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.box_create_parties {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    /* border: 1px solid red; */
+    height: 200px;
+}
+
+.box_create_parties div {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.box_create_parties button {
+    font-size: 28px;
+    padding: 10px;
+    background-color: goldenrod;
+    color: black;
+    cursor: pointer;
+    border: 1px solid goldenrod;
+    border-radius: 10px;
+}
+
+.box_create_parties button:hover {
+    background-color: black;
+    color: goldenrod;
+}
+
+
+
+.partie_name {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+.partie_nbr_player {
+    font-size: 15px; 
+    font-style: italic;
+    margin-bottom: 100px;
+}
+
+.btn_partie_delete {
+    background-color: red;
+    border: 1px solid red;
+    width: 100px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn_partie_select {
+    background-color: green;
+    border: 1px solid green;
+    width: 150px;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}

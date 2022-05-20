@@ -1,0 +1,150 @@
+/* Form character */
+
+.container.form_character,
+.description .form_item,
+.description .form_base_item,
+.description .form_spell,
+.description .form_stats,
+.description .form_caract {
+    position: absolute;
+    background-color: black;
+    top: 60vh;
+    left: calc(50vw - 200px);
+    width: 400px;
+    height: fit-content;
+    display: none;
+    z-index: 2;
+    border-radius: 5px;
+    padding: 5px;
+    color: goldenrod;
+}
+
+.description .form_item,
+.description .form_base_item,
+.description .form_spell,
+.description .form_stats,
+.description .form_caract,
+.container.form_character  {
+    position: fixed;
+    top: 62vh;
+    left: calc(50vh - -250px);
+}
+
+.registrationForm,
+.registrationForm div,
+.registrationForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container.form_character.displayed,
+.form_item.displayed,
+.form_base_item.displayed,
+.form_spell.displayed,
+.description .form_stats.displayed,
+.description .form_caract.displayed {
+    display: block;
+}
+
+.form_character .content_form_check,
+.form_item .content_form_check,
+.form_base_item .content_form_check {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    /* background-color: black; */
+}
+
+.form_character .content_form_check .form_check,
+.form_item .content_form_check .form_check,
+.form_base_item .content_form_check .form_check{
+    width: 40%;
+    color: goldenrod;
+    position: relative;
+    height: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.form_character .content_form_check .form_check input,
+.form_item .content_form_check .form_check input,
+.form_base_item .content_form_check .form_check input {
+    display: none;
+}
+
+.form_character .content_form_check .form_check label,
+.form_item .content_form_check .form_check label,
+.form_base_item .content_form_check .form_check label {
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    position: absolute;
+    padding-top: 15px;
+    font-size: 18px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+}
+
+.container input {
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-left: 5px;
+    margin-bottom: 5px;
+    width: 158%;
+    border: 1px solid goldenrod;
+    background-color: rgb(24, 24, 24);
+    color: goldenrod;
+    padding: 5px;
+    font-weight: bold;
+    
+}
+
+.form_character .content_form_check .form_check label.active,
+.form_item .content_form_check .form_check label.active,
+.form_base_item .content_form_check .form_check label.active {
+    box-shadow: 2px 2px 5px goldenrod inset;
+}
+
+.container h2 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container button {
+    border-radius: 5px;
+    background-color: black;
+    border: 1px solid goldenrod;
+    color: goldenrod;
+    padding: 10px;
+}
+
+.container button:hover {
+    background-color: goldenrod;
+    border: 1px solid goldenrod;
+    color: black;
+}
+
+/* Form stats specific */
+
+.description .form_stats .form-control {
+    text-align: center;
+    font-size: 20px;
+    padding: 3px;
+    width: 50px;
+}
+.description .form_stats .content_stats {
+    flex-direction: row;
+    width: 50%;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.description .form_stats .content_stats .slash {
+    padding-top: 13px;
+    padding-left: 10px;
+}
