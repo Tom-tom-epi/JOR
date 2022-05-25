@@ -50,8 +50,8 @@ if(validation.isValid) {
 
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
-
-    axios.get(`http://127.0.0.1:8000/user_login/`+ this.state.email + "/" + this.state.password)
+console.log("in log");
+    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/user_login/`+ this.state.email + "/" + this.state.password)
     .then(res => {
         this.props.getLogged(res.data.username, res.data.email, res.data.id);
     })

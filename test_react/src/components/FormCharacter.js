@@ -59,7 +59,7 @@ if(validation.isValid) {
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    axios.post(`http://127.0.0.1:8000/api/character_create/`
+    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/character_create/`
     + this.state.full_name + "/" 
     + this.state.special + "/" 
     + this.state.race + "/"

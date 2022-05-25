@@ -9,6 +9,12 @@ use Illuminate\Support\Facades\Session;
 class PersonnageController extends Controller
 {
 
+    public function test() {
+
+
+        return "test";
+    }
+
     public function addItemFromList($id_player, $id_item, $id_party) {
 
 

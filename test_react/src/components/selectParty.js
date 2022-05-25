@@ -40,7 +40,7 @@ class SelectParty extends React.Component {
       axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-    axios.post(`http://127.0.0.1:8000/api/user/delete_party` + `/` + id + `/` + this.props.id_user)
+    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/delete_party` + `/` + id + `/` + this.props.id_user)
       .then(res => {
         // console.log(res);
         this.setState({ update: !this.state.update }); 
@@ -53,7 +53,7 @@ class SelectParty extends React.Component {
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-    axios.get(`http://127.0.0.1:8000/api/user/getParties` + `/` + id)
+    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/user/getParties` + `/` + id)
       .then(res => {
         // let result = Object.values(res.data);
         // console.log(res);

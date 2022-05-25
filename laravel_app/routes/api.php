@@ -60,3 +60,5 @@ Route::get('/user/getParties/{id_user}', [UserController::class, 'getParties']);
 Route::post('/user/create_party/{name}/{id_user}/{email}', [UserController::class, 'createParty']);
 
 Route::post('/user/delete_party/{id_party}/{id_admin}', [UserController::class, 'deleteParty']);
+
+Route::get('/test/', [PersonnageController::class, 'test']);

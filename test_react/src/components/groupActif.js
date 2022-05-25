@@ -86,7 +86,7 @@ class GroupActif extends React.Component {
         axios.defaults.xsrfCookieName = 'csrftoken';
         axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-        axios.post(`http://127.0.0.1:8000/api/users/updatePosition/` + json + "/" + id_party)
+        axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/users/updatePosition/` + json + "/" + id_party)
         .then(res => {
             // console.log(res);
             // throw new Error("Script disactivated");
@@ -104,7 +104,7 @@ class GroupActif extends React.Component {
       axios.defaults.xsrfCookieName = 'csrftoken';
       axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-      axios.get(`http://127.0.0.1:8000/api/users/active` + "/" + this.props.id_party)
+      axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/active` + "/" + this.props.id_party)
       .then(res => {
           let result = Object.values(res.data);
           this.setState({ users: result });
@@ -140,7 +140,7 @@ class GroupActif extends React.Component {
           axios.defaults.xsrfCookieName = 'csrftoken';
           axios.defaults.xsrfHeaderName = 'X-CSRFToken';
   
-          axios.post(`http://127.0.0.1:8000/api/users/updatePosition/` + json + "/" + id_party)
+          axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/users/updatePosition/` + json + "/" + id_party)
           .then(res => {
               // console.log(res);
           })
@@ -164,7 +164,7 @@ class GroupActif extends React.Component {
           axios.defaults.xsrfCookieName = 'csrftoken';
           axios.defaults.xsrfHeaderName = 'X-CSRFToken';
   
-          axios.post(`http://127.0.0.1:8000/api/users/updatePosition/` + json + "/" + id_party)
+          axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/users/updatePosition/` + json + "/" + id_party)
           .then(res => {
               // console.log(res);
           })
@@ -198,7 +198,7 @@ class GroupActif extends React.Component {
           axios.defaults.xsrfCookieName = 'csrftoken';
           axios.defaults.xsrfHeaderName = 'X-CSRFToken';
   
-          axios.post(`http://127.0.0.1:8000/api/users/updatePosition/` + json + "/" + id_party)
+          axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/users/updatePosition/` + json + "/" + id_party)
           .then(res => {
               // console.log(res);
           })
@@ -225,7 +225,7 @@ class GroupActif extends React.Component {
           axios.defaults.xsrfCookieName = 'csrftoken';
           axios.defaults.xsrfHeaderName = 'X-CSRFToken';
   
-          axios.post(`http://127.0.0.1:8000/api/users/updatePosition/` + json + "/" + id_party)
+          axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/users/updatePosition/` + json + "/" + id_party)
           .then(res => {
               // console.log(res);
           })
@@ -256,7 +256,7 @@ class GroupActif extends React.Component {
   //       axios.defaults.xsrfCookieName = 'csrftoken';
   //       axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-  //       axios.get(`http://127.0.0.1:8000/api/users/active` + "/" + this.props.id_party)
+  //       axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/active` + "/" + this.props.id_party)
   //       .then(res => {
   //           let result = Object.values(res.data);
   //           this.setState({ users: result });
@@ -270,7 +270,7 @@ class GroupActif extends React.Component {
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-    axios.get(`http://127.0.0.1:8000/api/users/active` + "/" + this.props.id_party)
+    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/active` + "/" + this.props.id_party)
       .then(res => {
         let result = Object.values(res.data);
         // console.log(result);

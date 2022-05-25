@@ -76,7 +76,7 @@ $(function(){
   })
 
   $(yes_disconect).on('click', function() {
-    window.location.replace("http://localhost:3000/");
+    window.location.replace("https://ce-soir-c-est-jor.com/");
   })
 
   $(no_disconect).on('click', function() {

@@ -63,7 +63,7 @@ if(validation.isValid) {
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    axios.post(`http://127.0.0.1:8000/api/user_register/`+ this.state.username + "/" + this.state.email + "/" + this.state.password)
+    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user_register/`+ this.state.username + "/" + this.state.email + "/" + this.state.password)
     .then(res => {
         console.log(res);
         if(res.data[0] !== undefined) {
