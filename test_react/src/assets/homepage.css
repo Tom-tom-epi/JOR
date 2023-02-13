@@ -84,3 +84,16 @@ h1 {
     position: fixed;
     top: 285px;
 }
+
+.error_alert_login {
+    background-color: red;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 285px;
+    display: none;
+}
+
+.error_alert_login.displayed {
+    display: block;
+}

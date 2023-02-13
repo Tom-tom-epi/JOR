@@ -52,7 +52,7 @@ if(validation.isValid) {
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/spell_create/`
+    axios.post(`https://ce-soir-c-est-jor.com/api/api/user/spell_create/`
     + this.state.spell_name + "/" 
     + this.state.spell_effect + "/" 
     + this.state.ecole + "/" 

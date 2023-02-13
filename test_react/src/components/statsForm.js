@@ -74,7 +74,7 @@ if(validation.isValid) {
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/update_stats/` 
+    axios.post(`https://ce-soir-c-est-jor.com/api/api/user/update_stats/` 
     + this.state.health + "/" 
     + this.state.maxHealth + "/" 
     + this.state.mana + "/"

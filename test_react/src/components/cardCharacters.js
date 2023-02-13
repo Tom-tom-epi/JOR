@@ -27,7 +27,7 @@ class CardCharacters extends React.Component {
   addToGroup = (id, active) => {
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = 'X-CSRFToken'
-    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/addToGroup/`+id+"/"+active+"/"+ this.props.id_party)
+    axios.post(`https://ce-soir-c-est-jor.com/api/api/user/addToGroup/`+id+"/"+active+"/"+ this.props.id_party)
       .then(res => {
         //   Update self
         //   And update the group (child component)
@@ -52,7 +52,7 @@ class CardCharacters extends React.Component {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-        axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/`+ this.props.id_party)
+        axios.get(`https://ce-soir-c-est-jor.com/api/api/users/`+ this.props.id_party)
         .then(res => {
             let result = Object.values(res.data);
             this.setState({ users: result });
@@ -65,7 +65,7 @@ class CardCharacters extends React.Component {
         axios.defaults.xsrfCookieName = 'csrftoken'
         axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-        axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/`+ this.props.id_party)
+        axios.get(`https://ce-soir-c-est-jor.com/api/api/users/`+ this.props.id_party)
         .then(res => {
             let result = Object.values(res.data);
             this.setState({ users: result });
@@ -78,7 +78,7 @@ class CardCharacters extends React.Component {
     axios.defaults.xsrfCookieName = 'csrftoken'
     axios.defaults.xsrfHeaderName = 'X-CSRFToken'
 
-    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/`+ this.props.id_party)
+    axios.get(`https://ce-soir-c-est-jor.com/api/api/users/`+ this.props.id_party)
       .then(res => {
         let result = Object.values(res.data);
         this.setState({ users: result });

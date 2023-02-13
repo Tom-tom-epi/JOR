@@ -8,10 +8,10 @@
 .description .form_caract {
     position: absolute;
     background-color: black;
-    top: 60vh;
+    top: calc(50vh + 100px);
     left: calc(50vw - 200px);
     width: 400px;
-    height: fit-content;
+    height: 300px;
     display: none;
     z-index: 2;
     border-radius: 5px;
@@ -26,8 +26,8 @@
 .description .form_caract,
 .container.form_character  {
     position: fixed;
-    top: 62vh;
-    left: calc(50vh - -250px);
+    /* top: 62vh; */
+    /* left: calc(50vh - -250px); */
 }
 
 .registrationForm,

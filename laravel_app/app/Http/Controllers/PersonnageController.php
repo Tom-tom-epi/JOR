@@ -11,7 +11,7 @@ class PersonnageController extends Controller
 
     public function test() {
 
-
+        echo "test";
         return "test";
     }
 

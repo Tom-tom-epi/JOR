@@ -42,14 +42,14 @@ class Description extends React.Component {
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/user/getSpells/`+ this.props.id_desc + "/" + this.props.id_party)
+    axios.get(`https://ce-soir-c-est-jor.com/api/api/user/getSpells/`+ this.props.id_desc + "/" + this.props.id_party)
     .then(res => {
       //   Update self
       //   And update the group (child component)
       this.setState({ spells: res.data });  
       // console.log(this.state.spells);      
     })
-    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/user/getInventory/`+ this.props.id_desc + "/" + this.props.id_party)
+    axios.get(`https://ce-soir-c-est-jor.com/api/api/user/getInventory/`+ this.props.id_desc + "/" + this.props.id_party)
       .then(res => {
         //   Update self
         //   And update the group (child component)
@@ -57,7 +57,7 @@ class Description extends React.Component {
         // console.log(this.state.items);         
     })
 
-    axios.get(`https://ce-soir-c-est-jor.com/api/:8000/api/users/getListItems/0/` + this.props.id_party)
+    axios.get(`https://ce-soir-c-est-jor.com/api/api/users/getListItems/0/` + this.props.id_party)
       .then(res => {
         //   Update self
         //   And update the group (child component)
@@ -246,7 +246,7 @@ class Description extends React.Component {
       axios.defaults.xsrfCookieName = 'csrftoken';
       axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-      axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/deleteItem/`
+      axios.post(`https://ce-soir-c-est-jor.com/api/api/user/deleteItem/`
       + id_player + "/" 
       + id
       + "/" + this.props.id_party)
@@ -258,7 +258,7 @@ class Description extends React.Component {
       axios.defaults.xsrfCookieName = 'csrftoken';
       axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-      axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/subItem/`
+      axios.post(`https://ce-soir-c-est-jor.com/api/api/user/subItem/`
       + id_player + "/" 
       + id + "/"
       + nbr
@@ -275,7 +275,7 @@ class Description extends React.Component {
       axios.defaults.xsrfCookieName = 'csrftoken';
       axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-      axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/addItemFromList/`
+      axios.post(`https://ce-soir-c-est-jor.com/api/api/user/addItemFromList/`
       + this.props.id_desc + "/" 
       + id
       + "/" + this.props.id_party)

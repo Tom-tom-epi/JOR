@@ -38,14 +38,18 @@ class UserController extends Controller
         $userExist = DB::table('users')
                     ->where('email', $email)
                     ->get();
+        $message = [];
         if(isset($userExist[0]->password)) {
             if (password_verify($password, $userExist[0]->password)) {
-                $message = 'Le mot de passe est valide !';
+                $message['message'] = 'Le mot de passe est valide !';
+                // return $message;
             } else {
-                $message = 'Le mot de passe est invalide.';
+                $message['message'] = 'error';
+                return $message;
             }
         }else {
-            $message = 'User unknow';
+            $message['message'] = 'error';
+            return $message;
         }
 
         return $userExist[0];
@@ -74,11 +78,17 @@ class UserController extends Controller
                             ->where('id_admin', $id_admin)
                             ->get('id');
 
-            if($checkAdmin[1]->id == $id_party) {
-                $getIdPlayerForDelete = DB::table('personnages')
-                        ->where("id_party", $id_party)
-                        ->get('id');
+            if(isset($checkAdmin[0])) {
+                if($checkAdmin[0]->id == $id_party) {
+                    $getIdPlayerForDelete = DB::table('personnages')
+                            ->where("id_party", $id_party)
+                            ->get('id');
+                }
+            }else {
+                $result = "error";
+                return $result;
             }
+
         }
 
         if(isset($id_party) && isset($getIdPlayerForDelete)) {
@@ -107,6 +117,9 @@ class UserController extends Controller
             ->where("id", $id_party)
             ->delete();
 
+        }else {
+            $result = "Params error";
+            return $result;
         }
 
         return json_encode($id_admin);

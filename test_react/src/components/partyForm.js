@@ -52,7 +52,7 @@ if(validation.isValid) {
     axios.defaults.xsrfCookieName = 'csrftoken';
     axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
-    axios.post(`https://ce-soir-c-est-jor.com/api/:8000/api/user/create_party/` 
+    axios.post(`https://ce-soir-c-est-jor.com/api/api/user/create_party/` 
     + this.state.name + "/"
     + this.props.id_user + "/"
     + this.props.email_user)

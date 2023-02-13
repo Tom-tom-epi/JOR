@@ -15,7 +15,7 @@ return [
 
     'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', sprintf(
         '%s%s',
-        'ce-soir-c-est-jor.com,ce-soir-c-est-jor.com,ce-soir-c-est-jor.com,ce-soir-c-est-jor.com/api/:8000,::1',
+        'ce-soir-c-est-jor.com,ce-soir-c-est-jor.com/api/,::1',
         env('APP_URL') ? ','.parse_url(env('APP_URL'), PHP_URL_HOST) : ''
     ))),
 
